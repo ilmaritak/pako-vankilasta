@@ -118,259 +118,215 @@ def room7():
 def room8():
     room_name = "room8"
     room_description = (
-        "Olet hämärässä käytävässä. "
-        "Lännessä on ovi selliin, etelässä vartijan koppi, "
-        "pohjoisessa portaikko ja idässä siivouskomero."
+        "Olet vankilanjohtajan toimistossa."
+        "Huoneessa on työpöytä ja hyllyjä täynnä erilaisia asiakirjoja."
+        "Etelässä on ovi takaisin käytäävään ja idässä on ovi ruokavarastoon."
     )
 
-    direction = handle_commands(room_name, room_description, valid_dirs=['l', 'e', 'p', 'i'])
+    direction = handle_commands(room_name, room_description, valid_dirs=['e', 'i'])
 
-    if direction == 'l':
-        room1()
     if direction == 'e':
-        room3()
+        room6()
     if direction == 'i':
-        room4()
-    if direction == 'p':
-        room5()
+        room9()
 
 # Asevarasto
 def room9():
-    room_name = "room2"
+    room_name = "room9"
     room_description = (
-        "Olet hämärässä käytävässä. "
-        "Lännessä on ovi selliin, etelässä vartijan koppi, "
-        "pohjoisessa portaikko ja idässä siivouskomero."
+        "Olet asevarastossa."
+        "Ympärilläsi on lukittuja kaappeja täynnä vartijoiden käyttämiä aseita."
+        "Lännessä on ovi takaisin toimistoon."
     )
 
-    direction = handle_commands(room_name, room_description, valid_dirs=['l', 'e', 'p', 'i'])
+    direction = handle_commands(room_name, room_description, valid_dirs=['l'])
 
     if direction == 'l':
-        room1()
-    if direction == 'e':
-        room3()
-    if direction == 'i':
-        room4()
-    if direction == 'p':
-        room5()
+        room8()
 
 # Parveke
 def room10():
     room_name = "room10"
     room_description = (
-        "Olet hämärässä käytävässä. "
-        "Lännessä on ovi selliin, etelässä vartijan koppi, "
-        "pohjoisessa portaikko ja idässä siivouskomero."
+        "Olet parvekkeella."
+        "Näet vankilan pihamaan ja kaukaisuudessa olevat vankilan muurit."
+        "Etelässä on ovi paloportaikkoon ja lännestä pääset takaisin käytävään."
     )
 
-    direction = handle_commands(room_name, room_description, valid_dirs=['l', 'e', 'p', 'i'])
+    direction = handle_commands(room_name, room_description, valid_dirs=['l', 'e'])
 
     if direction == 'l':
-        room1()
+        room6()
     if direction == 'e':
-        room3()
-    if direction == 'i':
-        room4()
-    if direction == 'p':
-        room5()
+        room11()
 
 # Paloportaikko
 def room11():
-    room_name = "room2"
+    room_name = "room11"
     room_description = (
-        "Olet hämärässä käytävässä. "
-        "Lännessä on ovi selliin, etelässä vartijan koppi, "
-        "pohjoisessa portaikko ja idässä siivouskomero."
+        "Olet paloportaikossa."
+        "Portaikko on ruostunut ja rämisevä."
+        "Poistumalla itään pääset pääaulaan, pohjoisesta pääset takaisin parvekkeelle."
     )
 
-    direction = handle_commands(room_name, room_description, valid_dirs=['l', 'e', 'p', 'i'])
+    direction = handle_commands(room_name, room_description, valid_dirs=['p', 'i'])
 
-    if direction == 'l':
-        room1()
-    if direction == 'e':
-        room3()
     if direction == 'i':
-        room4()
+        room12()
     if direction == 'p':
-        room5()
+        room10()
 
 # Pääaula
 def room12():
-    room_name = "room2"
+    room_name = "room12"
     room_description = (
-        "Olet hämärässä käytävässä. "
-        "Lännessä on ovi selliin, etelässä vartijan koppi, "
-        "pohjoisessa portaikko ja idässä siivouskomero."
+        "Olet avarassa pääaulassa."
+        "Aula on hyvin valaistu ja seinät on koristeltu kauniilla maalauksilla."
+        "Etelässä on ovi parkkihalliin, pohjoisessa on vartijoiden taukohuone."
+        "Idässä on on pääovien eteistila ja lännestä pääset takaisin paloportaisiin."
     )
 
     direction = handle_commands(room_name, room_description, valid_dirs=['l', 'e', 'p', 'i'])
 
     if direction == 'l':
-        room1()
+        room11()
     if direction == 'e':
-        room3()
+        room13()
     if direction == 'i':
-        room4()
+        room14()
     if direction == 'p':
-        room5()
+        room15()
 
 # Parkkihalli
 def room13():
-    room_name = "room2"
+    room_name = "room13"
     room_description = (
-        "Olet hämärässä käytävässä. "
-        "Lännessä on ovi selliin, etelässä vartijan koppi, "
-        "pohjoisessa portaikko ja idässä siivouskomero."
+        "Olet viileässä parkkihallissa."
+        "On autiota ja autoja ei näy missään."
+        "Idässä on uloskäynti tankkausasemalle, pohjoisesta pääset takaisin pääaulaan."
     )
 
-    direction = handle_commands(room_name, room_description, valid_dirs=['l', 'e', 'p', 'i'])
+    direction = handle_commands(room_name, room_description, valid_dirs=['p', 'i'])
 
-    if direction == 'l':
-        room1()
-    if direction == 'e':
-        room3()
     if direction == 'i':
-        room4()
+        room17()
     if direction == 'p':
-        room5()
+        room12()
 
 # Uloskäynnin eteinen
 def room14():
-    room_name = "room2"
+    room_name = "room14"
     room_description = (
-        "Olet hämärässä käytävässä. "
-        "Lännessä on ovi selliin, etelässä vartijan koppi, "
-        "pohjoisessa portaikko ja idässä siivouskomero."
+        "Olet uloskäynnin eteisessä."
+        "Seinällä on ilmoitustaulu täynnä erilaisia ilmoituksia ja mainoksia."
+        "Idässä on uloskäynti sisäpihalle, lännestä pääset pääaulaan."
     )
 
-    direction = handle_commands(room_name, room_description, valid_dirs=['l', 'e', 'p', 'i'])
+    direction = handle_commands(room_name, room_description, valid_dirs=['l', 'i'])
 
     if direction == 'l':
-        room1()
-    if direction == 'e':
-        room3()
+        room12()
     if direction == 'i':
-        room4()
-    if direction == 'p':
-        room5()
+        room19()
 
 # Vartijoiden taukohuone
 def room15():
-    room_name = "room2"
+    room_name = "room15"
     room_description = (
-        "Olet hämärässä käytävässä. "
-        "Lännessä on ovi selliin, etelässä vartijan koppi, "
-        "pohjoisessa portaikko ja idässä siivouskomero."
+        "Olet vartijoiden taukohuoneessa."
+        "Huoneessa on likainen pöytä täynnä ruoan jämiä ja kahviläikkiä."
+        "Joka paikka on hujanhajan erilaisia varusteita ja roskia."
+        "Pohjoisessa on ovi vartijoiden pukuhuoneeseen, etelästä pääset takaisin pääaulaan."
     )
 
-    direction = handle_commands(room_name, room_description, valid_dirs=['l', 'e', 'p', 'i'])
+    direction = handle_commands(room_name, room_description, valid_dirs=['e', 'p'])
 
-    if direction == 'l':
-        room1()
     if direction == 'e':
-        room3()
-    if direction == 'i':
-        room4()
+        room12()
     if direction == 'p':
-        room5()
+        room16()
 
 # Vartijoiden pukuhuone
 def room16():
-    room_name = "room2"
+    room_name = "room16"
     room_description = (
-        "Olet hämärässä käytävässä. "
-        "Lännessä on ovi selliin, etelässä vartijan koppi, "
-        "pohjoisessa portaikko ja idässä siivouskomero."
+        "Olet vartijoiden pukuhuoneessa."
+        "Huoneessa haisee hiki ja ilma on raskas. Seinillä on avonaisia pukukaappeja."
+        "Etelästä pääset takaisin taukohuoneeseen."
     )
 
-    direction = handle_commands(room_name, room_description, valid_dirs=['l', 'e', 'p', 'i'])
+    direction = handle_commands(room_name, room_description, valid_dirs=['e'])
 
-    if direction == 'l':
-        room1()
     if direction == 'e':
-        room3()
-    if direction == 'i':
-        room4()
-    if direction == 'p':
-        room5()
+        room15()
 
 # Sisäpiha
 def room17():
-    room_name = "room2"
+    room_name = "room17"
     room_description = (
-        "Olet hämärässä käytävässä. "
-        "Lännessä on ovi selliin, etelässä vartijan koppi, "
-        "pohjoisessa portaikko ja idässä siivouskomero."
+        "Olet vankilan sisäpihalla."
+        "Ilma on raikas ja aurinko lämmittää mukavasti"
+        "Pohjoisessa on tankkausasema vanginkuljetusautoja varten."
+        "Etelässä on portinvartijan koppi ja Idässä on portit ulos vankilasta."
+        "Lännestä pääset pääovien eteistilaan."
     )
 
     direction = handle_commands(room_name, room_description, valid_dirs=['l', 'e', 'p', 'i'])
 
     if direction == 'l':
-        room1()
+        room14()
     if direction == 'e':
-        room3()
+        room18()
     if direction == 'i':
-        room4()
+        room20()
     if direction == 'p':
-        room5()
+        room19()
 
 # Portinvartijan koppi
 def room18():
-    room_name = "room2"
+    room_name = "room18"
     room_description = (
-        "Olet hämärässä käytävässä. "
-        "Lännessä on ovi selliin, etelässä vartijan koppi, "
-        "pohjoisessa portaikko ja idässä siivouskomero."
+        "Olet portinvartijan kopissa."
+        "Kopissa on pieni pöytä, jossa on tietokone ja donitsin muruja."
+        "Pohjoisesta pääset takaisin sisäpihalle."
     )
 
-    direction = handle_commands(room_name, room_description, valid_dirs=['l', 'e', 'p', 'i'])
+    direction = handle_commands(room_name, room_description, valid_dirs=['p'])
 
-    if direction == 'l':
-        room1()
-    if direction == 'e':
-        room3()
-    if direction == 'i':
-        room4()
     if direction == 'p':
-        room5()
+        room17()
 
 # Tankkausasema
 def room19():
-    room_name = "room2"
+    room_name = "room19"
     room_description = (
-        "Olet hämärässä käytävässä. "
-        "Lännessä on ovi selliin, etelässä vartijan koppi, "
-        "pohjoisessa portaikko ja idässä siivouskomero."
+        "Olet tankkausasemalla."
+        "Täällä tankataan vankienkuljetusautot."
+        "On autiota ja lattialla on öljyläikkiä."
+        "Etelästä pääset sisäpihalle, lännestä pääset parkkihalliin."
     )
 
-    direction = handle_commands(room_name, room_description, valid_dirs=['l', 'e', 'p', 'i'])
+    direction = handle_commands(room_name, room_description, valid_dirs=['l', 'e'])
 
     if direction == 'l':
-        room1()
+        room13()
     if direction == 'e':
-        room3()
-    if direction == 'i':
-        room4()
-    if direction == 'p':
-        room5()
+        room17()
 
 # Ulkoamaailma
 def room20():
-    room_name = "room2"
+    room_name = "room20"
     room_description = (
-        "Olet hämärässä käytävässä. "
-        "Lännessä on ovi selliin, etelässä vartijan koppi, "
-        "pohjoisessa portaikko ja idässä siivouskomero."
+        "Olet vankilan ulkopuolla."
+        "Näet loputtomiin jatkuvan vankilan ympärille levittyvän metsän."
+        "On kaunista."
+        "Liikkumalla itään olet vapaa."
+        "Lännestä pääset takaisin sisäpihalle."
     )
 
-    direction = handle_commands(room_name, room_description, valid_dirs=['l', 'e', 'p', 'i'])
+    direction = handle_commands(room_name, room_description, valid_dirs=['l', 'i'])
 
     if direction == 'l':
-        room1()
-    if direction == 'e':
-        room3()
+        room17()
     if direction == 'i':
-        room4()
-    if direction == 'p':
-        room5()
-
+        game_end()

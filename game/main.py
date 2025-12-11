@@ -12,7 +12,8 @@ def welcome():
     print(f"Hei {player}!")
     print("Vankilasta on katkennut sähköt ja huomaat ovesi sähkölukon olevan auki.")
     print("Muutenkin ympäristö vaikuttaa autiolta.")
+    room1()
 
 if __name__ == "__main__":
     welcome()
-    room1()
+

@@ -2,6 +2,10 @@
 # Github: ilmaritak
 #
 #
+# This file is used to store data about items in the game
+#
+#
+#
 inventory = []
 
 items = {
@@ -23,7 +27,7 @@ items = {
     "kuivamuonaa": {
         "location": "room7",
         "description": "Iso pakkaus kuivamuonaa. Tällä pärjäisi tarvittaessa monta päivää.",
-        "points": "5"
+        "points": 5
     },
     "ammuksia": {
         "location": "room13",

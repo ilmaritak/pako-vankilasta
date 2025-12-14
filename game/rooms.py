@@ -1,18 +1,20 @@
 # Author: Ilmari Takkunen
 # Github: ilmaritak
 #
+# This file contains room functions
+# Each room is function that uses the same pattern
 #
-from utils import handle_commands, add_score
+from utils import handle_commands, add_score, game_end
 from items import inventory
 
 # Vankiselli
 def room1():
-    room_name = "room1"
+    room_name = "room1" # used for items
     room_description = "Olet omassa sellissäsi. Ovesi itään on auki. "
 
-    direction = handle_commands(room_name, room_description, valid_dirs=['i'])
+    direction = handle_commands(room_name, room_description, valid_dirs=['i']) # Send information to command handler
 
-    if direction == 'i':
+    if direction == 'i': # start the according room function based on user input
         room2()
 
 # Tyrmän käytävä
@@ -188,7 +190,7 @@ def room11():
 def room12():
     room_name = "room12"
     room_description = (
-        "Olet avarassa pääaulassa."
+        "Olet avarassa pääaulassa. "
         "Aula on hyvin valaistu ja seinät on koristeltu kauniilla maalauksilla. "
         "Etelässä on ovi parkkihalliin, pohjoisessa on vartijoiden taukohuone. "
         "Idässä on on pääovien eteistila ja lännestä pääset takaisin paloportaisiin. "
@@ -337,4 +339,4 @@ def room20():
     if direction == 'l':
         room17()
     if direction == 'i':
-        room17()
+        game_end()

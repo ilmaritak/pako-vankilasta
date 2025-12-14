@@ -1,12 +1,15 @@
 # Author: Ilmari Takkunen
 # Github: ilmaritak
 #
+# This file is respnsibele of the commands and logic of the game
 #
 from items import inventory, items
 
 score = 0
-max_score = 100
+max_score = 90
+player = "" # This is used in end_game function and set in the welcome function in main
 
+# Functions for basic actions
 def show_inventory():
     print()
     if inventory:
@@ -61,6 +64,7 @@ def look(room_name, room_description):
         print("Täällä ei näytä olevan mitään erikoista.")
 
 
+# Input handling and item related actions
 def handle_commands(room_name, room_description, valid_dirs):
     look(room_name, room_description)
 
@@ -76,6 +80,9 @@ def handle_commands(room_name, room_description, valid_dirs):
         elif cmd == "lopeta":
             print("Peli päättyy.")
             exit()
+
+        elif cmd in ["apua", "vihje"]:
+            help()
 
         elif cmd.startswith("ota "):
             take_item(cmd[4:], room_name)
@@ -113,13 +120,20 @@ def handle_commands(room_name, room_description, valid_dirs):
             if len(parts) != 3:
                 print("Käytä muotoa: lataa <esine1> <esine2>")
                 continue
+
             a, b = parts[1], parts[2]
 
             if a not in inventory or b not in inventory:
                 print("Sinulla ei ole molempia esineitä.")
+
             elif (a == "kivääri" and b == "ammuksia") or (a == "ammuksia" and b == "kivääri"):
                 print("Latasit kiväärisi.")
                 add_score(10)
+
+            elif (a == "taskulamppu" and b == "paristo") or (a == "paristo" and b == "taskulamppu"):
+                print("Latasit taskulampun paristolla.")
+                add_score(10)
+
             else:
                 print("Tätä esinettä ei voi ladata.")
 
@@ -152,3 +166,47 @@ def handle_commands(room_name, room_description, valid_dirs):
 
         else:
             print("En ymmärrä komentoa.")
+
+# ending function usen after moving east from room 20
+def game_end():
+    global score, max_score
+
+
+    print("  PELI PÄÄTTYI  ")
+    print()
+
+    print(f"Onneksi olkoon {player}, pakenit vankilasta!")
+    print(f"Pisteesi: {score}/{max_score}\n")
+
+    if score >= 90:
+        print("Uskomaton suoritus! Et jättänyt mitään tutkimatta.")
+        print("Olet todellinen mestaripakolainen.")
+    elif score >= 50:
+        print("Hieno pako! Löysit suurimman osan salaisuuksista.")
+    elif score >= 30:
+        print("Selvisit nipin napin. Olisit voinut tutkia enemmän.")
+    else:
+        print("Pääsit pakoon, mutta hyvin hutiloiden.")
+        print("Vankila piti vielä monta salaisuutta sisällään.")
+
+    print("\nKiitos pelaamisesta!")
+    exit()
+
+# help function
+def help():
+    print()
+    print("Käytettävissä olevat komennot:")
+    print("--------------------------------")
+    print("mene <suunta>      - Liiku")
+    print("katsele / tutki    - Katso ympärillesi uudelleen")
+    print("ota <esine>        - Ota esine mukaasi")
+    print("pudota <esine>     - Pudota esine")
+    print("mukana             - Näytä inventaario")
+    print("tarkista <esine>   - Tarkista esineen kuvaus")
+    print("lataa <e1> <e2>    - Lataa esine (esim. kivääri, taskulamppu)")
+    print("syö <esine>        - Syö esine (jos mahdollista)")
+    print("pue <esine>        - Pue esine päällesi")
+    print("lue <esine>        - Lue esine")
+    print("lopeta             - Lopeta peli")
+    print("--------------------------------")
+    print()

@@ -26,7 +26,7 @@ Pelin lopussa pelaajan suoritus arvioidaan pisteiden perusteella ja hän saa pis
 ## Projektin rakenne
 
 ```
-pako-vankilasta/
+game/
 │
 ├── main.py        # Pelin käynnistys ja tervetulotoivotus
 ├── rooms.py       # Kaikki huoneet ja niiden logiikka
